@@ -18,8 +18,11 @@
 
 from setuptools import setup
 
+with open('VERSION') as f:
+    version = f.read().strip()
+
 setup(name='pyorient',
-    version='1.5.5',
+    version=version,
     author='Niko Usai <mogui83@gmail.com>, Domenico Lupinetti <ostico@gmail.com>',
     description='OrientDB native client library',
     long_description=open('README.rst').read(),
