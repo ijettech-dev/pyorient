@@ -19,12 +19,12 @@ def determine_version(String branch) {
     version_map = [:]
     switch(branch) {
         case 'ijet-integration':
-            version_map.version = "${version_base}~${env.BUILD_NUMBER}"
+            version_map.version = "${version_base}.${env.BUILD_NUMBER}"
             version_map.dest = 'dep'
             break
         default:
             branch_name = branch.replaceAll(/[^a-zA-Z0-9\.]/, '')
-            version_map.version = "${version_base}~${env.BUILD_NUMBER}.dev0+${branch_name}"
+            version_map.version = "${version_base}.${env.BUILD_NUMBER}.dev0+${branch_name}"
             version_map.dest = 'dev'
             break
     }
